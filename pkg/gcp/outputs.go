@@ -1,9 +1,9 @@
 package gcp
 
 import (
-	sbv1stack "buf.build/gen/go/plantoncloud/planton-cloud-apis/protocolbuffers/go/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp"
-	"buf.build/gen/go/plantoncloud/planton-cloud-apis/protocolbuffers/go/cloud/planton/apis/v1/stack/rpc/enums"
 	"context"
+	sbv1stack "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp"
+	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/stack/rpc/enums"
 )
 
 func Outputs(ctx context.Context, input *sbv1stack.StorageBucketGcpStackInput) (*sbv1stack.StorageBucketGcpStackOutputs, error) {
