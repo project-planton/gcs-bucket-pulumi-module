@@ -40,12 +40,13 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.3
-	github.com/plantoncloud/planton-cloud-apis v0.0.2
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.5
+	github.com/plantoncloud/planton-cloud-apis v0.0.8
 	github.com/pulumi/pulumi-gcp/sdk/v6 v6.67.0
 )
 
 require (
+	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.31.0-20231017183020-0de7443d03cf.1 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20221026131551-cf6655e29de4 // indirect
 	github.com/acomagu/bufpipe v1.0.3 // indirect
@@ -92,7 +93,7 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/term v1.1.0 // indirect
-	github.com/plantoncloud-inc/go-commons v0.0.405 // indirect
+	github.com/plantoncloud-inc/go-commons v0.0.407 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
 	github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06 // indirect
