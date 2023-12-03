@@ -42,8 +42,8 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.12
-	github.com/plantoncloud/planton-cloud-apis v0.0.43
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.13
+	github.com/plantoncloud/planton-cloud-apis v0.0.44
 	github.com/pulumi/pulumi-gcp/sdk/v6 v6.67.0
 )
 
@@ -97,7 +97,7 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/term v1.1.0 // indirect
-	github.com/plantoncloud-inc/go-commons v0.0.414 // indirect
+	github.com/plantoncloud-inc/go-commons v0.0.416 // indirect
 	github.com/pulumi/esc v0.5.7-0.20231030195049-f71961c0d5fa // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
