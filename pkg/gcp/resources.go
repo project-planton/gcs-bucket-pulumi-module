@@ -2,12 +2,13 @@ package gcp
 
 import (
 	"fmt"
+
 	"github.com/pkg/errors"
 	pulumigcpprovider "github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/automation/provider/google"
 	puluminameoutputgcp "github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/name/provider/cloud/gcp/output"
 	sbv1stackgcpstack "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp"
-	pulumigcp "github.com/pulumi/pulumi-gcp/sdk/v6/go/gcp"
-	"github.com/pulumi/pulumi-gcp/sdk/v6/go/gcp/storage"
+	pulumigcp "github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp"
+	"github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp/storage"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
