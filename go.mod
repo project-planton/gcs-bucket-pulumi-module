@@ -42,8 +42,8 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.16
-	github.com/plantoncloud/planton-cloud-apis v0.0.45
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.17
+	github.com/plantoncloud/planton-cloud-apis v0.0.50
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.2.1
 )
 
@@ -98,7 +98,7 @@ require (
 	github.com/pgavlin/fx v0.1.6 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/term v1.1.0 // indirect
-	github.com/plantoncloud-inc/go-commons v0.0.418 // indirect
+	github.com/plantoncloud-inc/go-commons v0.0.420 // indirect
 	github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 // indirect
 	github.com/pulumi/esc v0.6.1-0.20231111193429-44b746a5b3b5 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
