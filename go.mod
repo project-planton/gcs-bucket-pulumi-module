@@ -42,8 +42,8 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.21
-	github.com/plantoncloud/planton-cloud-apis v0.0.77
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.23
+	github.com/plantoncloud/planton-cloud-apis v0.0.81
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.2.1
 )
 
