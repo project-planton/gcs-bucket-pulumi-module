@@ -2,7 +2,9 @@ module github.com/plantoncloud-inc/storage-bucket-pulumi-blueprint
 
 go 1.21
 
-toolchain go1.21.3
+//replace github.com/plantoncloud/planton-cloud-apis => /Users/swarup/scm/github.com/plantoncloud/planton-cloud-apis
+
+//replace github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk => /Users/swarup/scm/github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk
 
 //these replacements are required in order to use external-secrets apis https://github.com/external-secrets/external-secrets/blob/main/go.mod
 replace (
@@ -42,8 +44,8 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.23
-	github.com/plantoncloud/planton-cloud-apis v0.0.81
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.27
+	github.com/plantoncloud/planton-cloud-apis v0.0.85
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.2.1
 )
 
