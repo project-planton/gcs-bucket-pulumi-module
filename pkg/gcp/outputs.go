@@ -2,19 +2,17 @@ package gcp
 
 import (
 	"context"
-
+	code2cloudv1deploybktstackgcpmodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp/model"
 	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/stack/job/enums/operationtype"
-
-	sbv1stack "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp"
 )
 
-func Outputs(ctx context.Context, input *sbv1stack.StorageBucketGcpStackInput) (*sbv1stack.StorageBucketGcpStackOutputs, error) {
-	return &sbv1stack.StorageBucketGcpStackOutputs{}, nil
+func Outputs(ctx context.Context, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) (*code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs, error) {
+	return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}, nil
 }
 
-func Get(stackOutput map[string]interface{}, input *sbv1stack.StorageBucketGcpStackInput) *sbv1stack.StorageBucketGcpStackOutputs {
+func Get(stackOutput map[string]interface{}, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs {
 	if input.StackJob.Spec.OperationType != operationtype.StackJobOperationType_apply || stackOutput == nil {
-		return &sbv1stack.StorageBucketGcpStackOutputs{}
+		return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}
 	}
-	return &sbv1stack.StorageBucketGcpStackOutputs{}
+	return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}
 }
