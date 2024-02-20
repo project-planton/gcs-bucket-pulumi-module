@@ -2,8 +2,9 @@ package gcp
 
 import (
 	"context"
-	code2cloudv1deploybktstackgcpmodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/storagebucket/stack/gcp/model"
-	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/stack/job/enums/operationtype"
+	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/iac/v1/stackjob/enums/stackjoboperationtype"
+
+	code2cloudv1deploybktstackgcpmodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/storagebucket/stack/gcp/model"
 )
 
 func Outputs(ctx context.Context, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) (*code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs, error) {
@@ -11,7 +12,7 @@ func Outputs(ctx context.Context, input *code2cloudv1deploybktstackgcpmodel.Stor
 }
 
 func Get(stackOutput map[string]interface{}, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs {
-	if input.StackJob.Spec.OperationType != operationtype.StackJobOperationType_apply || stackOutput == nil {
+	if input.StackJob.Spec.OperationType != stackjoboperationtype.StackJobOperationType_apply || stackOutput == nil {
 		return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}
 	}
 	return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}
