@@ -11,7 +11,7 @@ func Outputs(ctx context.Context, input *code2cloudv1deploybktstackgcpmodel.Stor
 	return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}, nil
 }
 
-func Get(stackOutput map[string]interface{}, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs {
+func OutputMapTransformer(stackOutput map[string]interface{}, input *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackInput) *code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs {
 	if input.StackJob.Spec.OperationType != stackjoboperationtype.StackJobOperationType_apply || stackOutput == nil {
 		return &code2cloudv1deploybktstackgcpmodel.StorageBucketGcpStackOutputs{}
 	}
