@@ -1,16 +1,16 @@
-module github.com/plantoncloud-inc/storage-bucket-pulumi-blueprint
+module github.com/plantoncloud/storage-bucket-pulumi-blueprint
 
 go 1.21
 
 //replace github.com/plantoncloud/planton-cloud-apis => /Users/swarup/scm/github.com/plantoncloud/planton-cloud-apis
 
-//replace github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk => /Users/swarup/scm/github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk
+//replace github.com/plantoncloud/pulumi-stack-runner-go-sdk => /Users/swarup/scm/github.com/plantoncloud/pulumi-stack-runner-go-sdk
 
 //replace github.com/plantoncloud-inc/go-commons => /Users/swarup/scm/github.com/plantoncloud-inc/go-commons
 
-//replace github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint => /Users/swarup/scm/github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint
+//replace github.com/plantoncloud/kube-cluster-pulumi-blueprint => /Users/swarup/scm/github.com/plantoncloud/kube-cluster-pulumi-blueprint
 
-//replace github.com/plantoncloud-inc/environment-pulumi-blueprint => /Users/swarup/scm/github.com/plantoncloud-inc/environment-pulumi-blueprint
+//replace github.com/plantoncloud/environment-pulumi-blueprint => /Users/swarup/scm/github.com/plantoncloud/environment-pulumi-blueprint
 
 //these replacements are required in order to use external-secrets apis https://github.com/external-secrets/external-secrets/blob/main/go.mod
 replace (
@@ -50,8 +50,8 @@ require (
 )
 
 require (
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.34
-	github.com/plantoncloud/planton-cloud-apis v0.0.101
+	github.com/plantoncloud/planton-cloud-apis v0.0.107
+	github.com/plantoncloud/pulumi-stack-runner-go-sdk v0.0.40
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.2.1
 )
 
@@ -105,7 +105,7 @@ require (
 	github.com/pgavlin/fx v0.1.6 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/term v1.1.0 // indirect
-	github.com/plantoncloud-inc/go-commons v0.0.427 // indirect
+	github.com/plantoncloud-inc/go-commons v0.0.429 // indirect
 	github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 // indirect
 	github.com/pulumi/esc v0.6.2 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
