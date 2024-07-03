@@ -2,11 +2,10 @@ package gcp
 
 import (
 	"fmt"
+	"github.com/plantoncloud/pulumi-blueprint-golang-commons/pkg/google/pulumigoogleprovider"
 
 	"github.com/pkg/errors"
 	code2cloudv1deploybktstackgcpmodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/storagebucket/stack/gcp/model"
-	pulumigcpprovider "github.com/plantoncloud/pulumi-stack-runner-go-sdk/pkg/automation/provider/google"
-	puluminameoutputgcp "github.com/plantoncloud/pulumi-stack-runner-go-sdk/pkg/name/provider/cloud/gcp/output"
 	pulumigcp "github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp"
 	"github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp/storage"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
@@ -18,7 +17,7 @@ type ResourceStack struct {
 }
 
 func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
-	gcpProvider, err := pulumigcpprovider.Get(ctx, s.Input.CredentialsInput.Google)
+	gcpProvider, err := pulumigoogleprovider.Get(ctx, s.Input.CredentialsInput.Google)
 	if err != nil {
 		return errors.Wrap(err, "failed to setup gcp provider")
 	}
@@ -58,5 +57,5 @@ func addBucket(ctx *pulumi.Context, input *code2cloudv1deploybktstackgcpmodel.St
 }
 
 func getGcpProjectIdOutputName() string {
-	return puluminameoutputgcp.Name(storage.Bucket{}, "gcp-project-id")
+	return pulumigoogleprovider.PulumiOutputName(storage.Bucket{}, "gcp-project-id")
 }
