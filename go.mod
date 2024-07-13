@@ -50,7 +50,7 @@ require (
 )
 
 require (
-	github.com/plantoncloud/planton-cloud-apis v0.0.204
+	github.com/plantoncloud/planton-cloud-apis v0.0.211
 	github.com/plantoncloud/pulumi-blueprint-golang-commons v0.0.0-20240702151641-1f0f663273d0
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.29.0
 )
