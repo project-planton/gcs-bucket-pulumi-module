@@ -3,8 +3,9 @@ package pkg
 import (
 	"fmt"
 	"github.com/pkg/errors"
+	"github.com/plantoncloud/gcs-bucket-pulumi-module/pkg/outputs"
 	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/gcp/gcsbucket/model"
-	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/gcp/pulumigoogleprovider"
+	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/gcp/pulumigoogleprovider"
 	"github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp/storage"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -34,7 +35,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 		return errors.Wrap(err, "failed to create bucket resource")
 	}
 
-	ctx.Export(BucketIdOutputName, createdBucket.Project)
+	ctx.Export(outputs.BucketIdOutputName, createdBucket.Project)
 
 	if !gcsBucket.Spec.IsPublic {
 		return nil

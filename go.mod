@@ -12,13 +12,13 @@ replace github.com/plantoncloud/pulumi-module-golang-commons => ../../plantonclo
 
 require (
 	github.com/pkg/errors v0.9.1
-	github.com/pulumi/pulumi/sdk/v3 v3.122.0
+	github.com/pulumi/pulumi/sdk/v3 v3.124.0
 	google.golang.org/grpc v1.63.2 // indirect
 )
 
 require (
 	github.com/plantoncloud/planton-cloud-apis v0.0.211
-	github.com/plantoncloud/pulumi-module-golang-commons v0.0.0-20240722171224-c185089f30b0
+	github.com/plantoncloud/pulumi-module-golang-commons v0.0.0-20240725065835-ac24c213b464
 	github.com/plantoncloud/stack-job-runner-golang-sdk v0.0.52
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.29.0
 )
