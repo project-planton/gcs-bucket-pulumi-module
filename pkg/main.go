@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud/gcs-bucket-pulumi-module/pkg/outputs"
-	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/gcp/gcsbucket/model"
+	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/gcp/gcsbucket"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/gcp/pulumigoogleprovider"
 	"github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp/storage"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type ResourceStack struct {
-	Input     *model.GcsBucketStackInput
+	Input     *gcsbucket.GcsBucketStackInput
 	GcpLabels map[string]string
 }
 
