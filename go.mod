@@ -22,6 +22,7 @@ require (
 	github.com/plantoncloud/stack-job-runner-golang-sdk v0.0.58
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.29.0
 	google.golang.org/protobuf v1.34.2
+	sigs.k8s.io/yaml v1.4.0
 )
 
 require (
