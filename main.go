@@ -20,7 +20,7 @@ func main() {
 			return fmt.Errorf("failed to unmarshal stack input: %v", err)
 		}
 		s := &pkg.ResourceStack{
-			StackInput: nil,
+			StackInput: stackInput,
 		}
 		return s.Resources(ctx)
 	})
