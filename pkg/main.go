@@ -11,21 +11,22 @@ import (
 )
 
 type ResourceStack struct {
-	Input     *gcsbucket.GcsBucketStackInput
-	GcpLabels map[string]string
+	StackInput *gcsbucket.GcsBucketStackInput
 }
 
 func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
-	gcpProvider, err := pulumigoogleprovider.Get(ctx, s.Input.GcpCredential)
+	locals := initializeLocals(ctx, s.StackInput)
+
+	gcpProvider, err := pulumigoogleprovider.Get(ctx, s.StackInput.GcpCredential)
 	if err != nil {
 		return errors.Wrap(err, "failed to setup gcp provider")
 	}
 
-	gcsBucket := s.Input.ApiResource
+	gcsBucket := s.StackInput.ApiResource
 
 	createdBucket, err := storage.NewBucket(ctx, gcsBucket.Metadata.Name, &storage.BucketArgs{
 		ForceDestroy:             pulumi.Bool(true),
-		Labels:                   pulumi.ToStringMap(s.GcpLabels),
+		Labels:                   pulumi.ToStringMap(locals.GcpLabels),
 		Location:                 pulumi.String(gcsBucket.Spec.GcpRegion),
 		Name:                     pulumi.String(gcsBucket.Metadata.Name),
 		Project:                  pulumi.String(gcsBucket.Spec.GcpProjectId),

@@ -21,6 +21,7 @@ require (
 	github.com/plantoncloud/pulumi-module-golang-commons v0.0.0-20240905105923-c9458da08f51
 	github.com/plantoncloud/stack-job-runner-golang-sdk v0.0.58
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.29.0
+	google.golang.org/protobuf v1.34.2
 )
 
 require (
@@ -103,7 +104,6 @@ require (
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240604185151-ef581f913117 // indirect
-	google.golang.org/protobuf v1.34.2 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
