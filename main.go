@@ -15,7 +15,7 @@ func main() {
 		if !ok {
 			return errors.New("stack-input not found in pulumi config")
 		}
-		stackInput := &gcsbucket.GcsBucket{}
+		stackInput := &gcsbucket.GcsBucketStackInput{}
 		if err := protojson.Unmarshal([]byte(stackInputString), stackInput); err != nil {
 			return fmt.Errorf("failed to unmarshal stack input: %v", err)
 		}
