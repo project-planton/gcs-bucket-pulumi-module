@@ -24,14 +24,16 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 
 	gcsBucket := s.StackInput.ApiResource
 
-	createdBucket, err := storage.NewBucket(ctx, gcsBucket.Metadata.Name, &storage.BucketArgs{
-		ForceDestroy:             pulumi.Bool(true),
-		Labels:                   pulumi.ToStringMap(locals.GcpLabels),
-		Location:                 pulumi.String(gcsBucket.Spec.GcpRegion),
-		Name:                     pulumi.String(gcsBucket.Metadata.Name),
-		Project:                  pulumi.String(gcsBucket.Spec.GcpProjectId),
-		UniformBucketLevelAccess: pulumi.Bool(!gcsBucket.Spec.IsPublic),
-	}, pulumi.Provider(gcpProvider))
+	createdBucket, err := storage.NewBucket(ctx,
+		gcsBucket.Metadata.Name,
+		&storage.BucketArgs{
+			ForceDestroy:             pulumi.Bool(true),
+			Labels:                   pulumi.ToStringMap(locals.GcpLabels),
+			Location:                 pulumi.String(gcsBucket.Spec.GcpRegion),
+			Name:                     pulumi.String(gcsBucket.Metadata.Name),
+			Project:                  pulumi.String(gcsBucket.Spec.GcpProjectId),
+			UniformBucketLevelAccess: pulumi.Bool(!gcsBucket.Spec.IsPublic),
+		}, pulumi.Provider(gcpProvider))
 	if err != nil {
 		return errors.Wrap(err, "failed to create bucket resource")
 	}
@@ -42,13 +44,29 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 		return nil
 	}
 
-	_, err = storage.NewBucketAccessControl(ctx, fmt.Sprintf("%s-public", gcsBucket.Metadata.Name), &storage.BucketAccessControlArgs{
-		Bucket: createdBucket.Name,
-		Role:   pulumi.String("READER"),
-		Entity: pulumi.String("allUsers"),
-	}, pulumi.Parent(createdBucket))
+	//grant bucket-reader role to allUsers
+	_, err = storage.NewBucketAccessControl(ctx,
+		fmt.Sprintf("%s-public", gcsBucket.Metadata.Name),
+		&storage.BucketAccessControlArgs{
+			Bucket: createdBucket.Name,
+			Role:   pulumi.String("READER"),
+			Entity: pulumi.String("allUsers"),
+		}, pulumi.Parent(createdBucket))
 	if err != nil {
 		return errors.Wrap(err, "failed to create public access control rule")
+	}
+
+	//grant object-reader role to allUsers
+	_, err = storage.NewBucketAccessControl(ctx,
+		fmt.Sprintf("%s-public-object-reader", gcsBucket.Metadata.Name),
+		&storage.BucketAccessControlArgs{
+			Bucket: createdBucket.Name,
+			Role:   pulumi.String("legacyObjectReader"),
+			Entity: pulumi.String("allUsers"),
+		},
+		pulumi.Parent(createdBucket))
+	if err != nil {
+		return errors.Wrap(err, "failed to create public access control rule for object reader role")
 	}
 	return nil
 }
