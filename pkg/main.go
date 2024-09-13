@@ -10,19 +10,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type ResourceStack struct {
-	StackInput *gcsbucket.GcsBucketStackInput
-}
+func Resources(ctx *pulumi.Context, stackInput *gcsbucket.GcsBucketStackInput) error {
+	locals := initializeLocals(ctx, stackInput)
 
-func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
-	locals := initializeLocals(ctx, s.StackInput)
-
-	gcpProvider, err := pulumigoogleprovider.Get(ctx, s.StackInput.GcpCredential)
+	gcpProvider, err := pulumigoogleprovider.Get(ctx, stackInput.GcpCredential)
 	if err != nil {
 		return errors.Wrap(err, "failed to setup gcp provider")
 	}
 
-	gcsBucket := s.StackInput.ApiResource
+	gcsBucket := stackInput.ApiResource
 
 	createdBucket, err := storage.NewBucket(ctx,
 		gcsBucket.Metadata.Name,
