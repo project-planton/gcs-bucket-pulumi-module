@@ -18,7 +18,7 @@ func Resources(ctx *pulumi.Context, stackInput *gcsbucket.GcsBucketStackInput) e
 		return errors.Wrap(err, "failed to setup gcp provider")
 	}
 
-	gcsBucket := stackInput.ApiResource
+	gcsBucket := stackInput.Target
 
 	createdBucket, err := storage.NewBucket(ctx,
 		gcsBucket.Metadata.Name,

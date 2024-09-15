@@ -14,7 +14,7 @@ type Locals struct {
 
 func initializeLocals(ctx *pulumi.Context, stackInput *gcsbucket.GcsBucketStackInput) *Locals {
 	locals := &Locals{}
-	gcsBucket := stackInput.ApiResource
+	gcsBucket := stackInput.Target
 	locals.GcpLabels = map[string]string{
 		gcplabelkeys.Resource:     strconv.FormatBool(true),
 		gcplabelkeys.Organization: gcsBucket.Spec.EnvironmentInfo.OrgId,
