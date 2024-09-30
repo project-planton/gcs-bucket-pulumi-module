@@ -1,8 +1,7 @@
 package pkg
 
 import (
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/gcp/gcsbucket"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/commons/apiresource/enums/apiresourcekind"
+	gcsbucketv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/gcp/gcsbucket/v1"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/gcp/gcplabelkeys"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"strconv"
@@ -12,13 +11,13 @@ type Locals struct {
 	GcpLabels map[string]string
 }
 
-func initializeLocals(ctx *pulumi.Context, stackInput *gcsbucket.GcsBucketStackInput) *Locals {
+func initializeLocals(ctx *pulumi.Context, stackInput *gcsbucketv1.GcsBucketStackInput) *Locals {
 	locals := &Locals{}
 	gcsBucket := stackInput.Target
 	locals.GcpLabels = map[string]string{
 		gcplabelkeys.Resource:     strconv.FormatBool(true),
 		gcplabelkeys.Organization: gcsBucket.Spec.EnvironmentInfo.OrgId,
-		gcplabelkeys.ResourceKind: apiresourcekind.ApiResourceKind_gcs_bucket.String(),
+		gcplabelkeys.ResourceKind: "gcs_bucket",
 		gcplabelkeys.ResourceId:   gcsBucket.Metadata.Id,
 	}
 	return locals

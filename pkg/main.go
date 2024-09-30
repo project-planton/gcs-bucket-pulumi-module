@@ -1,16 +1,16 @@
 package pkg
 
 import (
+	gcsbucketv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/gcp/gcsbucket/v1"
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud/gcs-bucket-pulumi-module/pkg/outputs"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/gcp/gcsbucket"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/gcp/pulumigoogleprovider"
 	"github.com/pulumi/pulumi-gcp/sdk/v7/go/gcp/storage"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-func Resources(ctx *pulumi.Context, stackInput *gcsbucket.GcsBucketStackInput) error {
+func Resources(ctx *pulumi.Context, stackInput *gcsbucketv1.GcsBucketStackInput) error {
 	locals := initializeLocals(ctx, stackInput)
 
 	gcpProvider, err := pulumigoogleprovider.Get(ctx, stackInput.GcpCredential)
