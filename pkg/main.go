@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	gcsbucketv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/gcp/gcsbucket/v1"
+	gcsbucketv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/gcp/gcsbucket/v1"
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud/gcs-bucket-pulumi-module/pkg/outputs"
