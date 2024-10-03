@@ -45,7 +45,7 @@ func Resources(ctx *pulumi.Context, stackInput *gcsbucketv1.GcsBucketStackInput)
 		fmt.Sprintf("%s-public", gcsBucket.Metadata.Name),
 		&storage.BucketAccessControlArgs{
 			Bucket: createdBucket.Name,
-			Role:   pulumi.String("roles/storage.legacyBucketReader"),
+			Role:   pulumi.String("READER"),
 			Entity: pulumi.String("allUsers"),
 		}, pulumi.Parent(createdBucket))
 	if err != nil {
