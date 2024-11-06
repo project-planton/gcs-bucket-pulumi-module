@@ -26,8 +26,8 @@ func initializeLocals(ctx *pulumi.Context, stackInput *gcsbucketv1.GcsBucketStac
 		gcplabelkeys.ResourceKind: "gcs_bucket",
 	}
 
-	if gcsBucket.Spec.EnvironmentInfo != nil && gcsBucket.Spec.EnvironmentInfo.OrgId != "" {
-		locals.GcpLabels[gcplabelkeys.Organization] = gcsBucket.Spec.EnvironmentInfo.OrgId
+	if gcsBucket.Metadata.Org != "" {
+		locals.GcpLabels[gcplabelkeys.Organization] = gcsBucket.Metadata.Org
 	}
 
 	return locals
