@@ -11,7 +11,7 @@ require (
 )
 
 require (
-	github.com/project-planton/project-planton v0.0.23
+	github.com/project-planton/project-planton v0.0.30
 	github.com/pulumi/pulumi-gcp/sdk/v7 v7.38.0
 )
 
